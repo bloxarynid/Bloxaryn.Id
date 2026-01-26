@@ -1,6 +1,6 @@
 @font-face {
   font-family: Minecraft Title;
-  src: url(fonts/minecraft.ttf);
+  src: url('https://cdn.jsdelivr.net/gh/bloxarynid/Bloxaryn.Id@main/fonts/minecraft.ttf');
 }
 
 /* https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftFive-Bold.ttf */
