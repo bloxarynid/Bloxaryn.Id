@@ -1,6 +1,9 @@
 @font-face {
-  font-family: Minecraft Title;
+  font-family: 'Minecraft Title';
   src: url('https://cdn.jsdelivr.net/gh/bloxarynid/Bloxaryn.Id@main/fonts/minecraft.ttf');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
 
 /* https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftFive-Bold.ttf */
@@ -8,7 +11,7 @@
 /* https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftSeven.ttf */
 
 @font-face {
-  font-family: Minecraft Font;
+  font-family: 'Minecraft Font';
   src: url('https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftSeven.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
@@ -16,7 +19,7 @@
 }
 
 @font-face {
-  font-family: Minecraft Title-Mini;
+  font-family: 'Minecraft Title-Mini';
   src: url('https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftFive-Bold.ttf');
   font-style: normal;
   font-weight: 550;
