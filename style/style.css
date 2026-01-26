@@ -1,0 +1,641 @@
+@font-face {
+  font-family: Minecraft Title;
+  src: url(fonts/minecraft.ttf);
+}
+
+/* https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftFive-Bold.ttf */
+
+/* https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftSeven.ttf */
+
+@font-face {
+  font-family: Minecraft Font;
+  src: url('https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftSeven.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: Minecraft Title-Mini;
+  src: url('https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftFive-Bold.ttf');
+  font-style: normal;
+  font-weight: 550;
+  text-rendering: optimizeLegibility;
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -9999999999;
+}
+
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(150deg, #001026, #0077cf);
+  min-height: 100vh;
+  display: flex;
+  /*tanpa ini uinya betantakan ya*/
+  flex-direction: column;
+}
+
+section {
+  padding: 30px 15px 30px 15px;
+  position: relative;
+}
+
+/* animasi teks ul, li, dan a di buat oleh DeepSeek */
+
+nav {
+  position: fixed;
+  z-index: 10000000000;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.35);
+  border-bottom: 1.25px solid grey;
+  justify-content: space-between;
+  padding: 0.55rem 2rem 0.55rem 0.55rem;
+  display: flex; /* agar nav bisa berdampingan */
+  height: 65px;
+  backdrop-filter: blur(1.5px);
+}
+
+nav ul {
+  gap: 0.8rem;
+  align-items: center;
+  list-style: none;
+  /* note: properti dibaeahini adalah agar text dari ul di kiri */
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+nav ul li a {
+  font-family: 'Minecraft Font', sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  padding: 2.4px 0;
+  text-align: end;
+  position: relative; /* Tambahkan ini */
+  display: inline-block; /* Penting untuk pseudo-element */
+}
+
+/* Border bawah yang akan muncul */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.8px;
+  background-color: #89cfff;
+  transform: scaleX(0); /* Awalnya tersembunyi */
+  transform-origin: left; /* Mulai dari kiri */
+  transition: transform 0.4s ease;
+}
+
+nav ul li a:hover {
+  color: #89cfff;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1); /* Muncul penuh saat hover */
+}
+
+svg {
+  font-family: 'Minecraft Title';
+  padding: 280px 0 0 0;
+}
+
+svg, text, .tumbal {
+  text-transform: uppercase;
+  font-size: 125px;
+  font-weight: 450;
+  animation: stroke 6.2s infinite alternate, fadeSlideUp 1.5s ease forwards;
+  fill: rgb(113,190,255);
+}
+
+.icon {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  object-fit: cover;
+  justify-content: center;
+  align-items: start;
+  padding-left: 0.55px;
+}
+
+.wadah {
+  background: rgba(0,0,0,0.18);
+  max-width: 1050px;
+  height: auto;
+  border: 1.25px solid rgba(204,204,204,0.532);
+  backdrop-filter: blur(1.5px);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 0 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll {
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory
+  white-space: nowrap;
+}
+
+.scroll:hover {
+  cursor: grab;
+}
+
+.wadah img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  margin: 0 10px 5px 0;
+  transition: transform 0.5s ease;
+}
+
+.wadah img:hover {
+  transform: scale(1.15);
+}
+
+.title {
+  font-family: 'Minecraft Title';
+  padding: 5px 0 15px 0;
+  text-align: center;
+  color: rgb(113,190,255);
+  border-left: none;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+#sosial .title {
+  margin-bottom: 5px;
+}
+
+#sosial .wadah {
+  padding: 8px 15px;
+  min-height: 120px;
+}
+
+#sosial .medsos { margin-top: 4px;}
+
+.artikel {
+  width: 100%;
+}
+
+.artikel p {
+  font-family: 'Minecraft Font';
+  color: #e0e0e0;
+  margin: 0 11px 5.5px 11px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+.artikel h2 {
+  font-family: 'Minecraft Font';
+  color: #6ad2ff;
+  font-weight: 450;
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+
+.bingkai {
+  margin: 0 auto 6px auto;
+  width: 125px;
+  height: 125px;
+  border-radius: 20px;
+  border: 2px solid rgb(124,233,255);
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  margin-top: 5px;
+  animation: toRight 1.2s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+}
+
+.wadah-kartu {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px; /* Jarak antar kartu yang lebih lega */
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  max-width: 1200px;
+  width: 100%;
+  min-width: fit-content;
+  padding: 0 15px; /* Ruang samping pada layar kecil */
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.kartu {
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 175px;
+  height: 220px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(21.5px);
+  transition: transform 0.3s ease, background 0.3s ease;
+  border: 1.2px solid #707070;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.7s ease;
+  -webkit-transition: transform 0.7s ease;
+  -moz-transition: transform 0.7s ease;
+  -ms-transition: transform 0.7s ease;
+  -o-transition: transform 0.7s ease;
+}
+
+.kartu:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.kartu img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  -webkit-transition: transform 0.7s ease;
+  -moz-transition: transform 0.7s ease;
+  -ms-transition: transform 0.7s ease;
+  -o-transition: transform 0.7s ease;
+}
+
+.kartu img:hover {
+  transform: scale(1.08);
+}
+
+.info-kartu {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0 0 0;
+  background: linear-gradient(to top, #51f2ffc0, #ffffff00);
+  color: #e0e0e0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  text-align: center;
+}
+
+.info-kartu a {
+  font-family: 'Jersey 10';
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+.info-kartu p {
+  font-family: 'Minecraft Font';
+  text-shadow: 2px 2px 40px rgb(119,224,255);
+  font-size: 0.8rem;
+  white-space: normal;
+}
+
+.kartu:hover .info-kartu {
+  transform: translateY(0);
+}
+
+#beranda {
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+#beranda .section-anim {
+  color: #e0e0e0;
+  z-index: 5;
+  position: relative;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6;
+}
+
+#beranda p {
+  font-family: 'Minecraft Font';
+  color: #e0e0e0;
+  padding-bottom: 10px;
+  animation: fadeSlideUp 1.5s ease forwards;
+}
+
+#beranda .kelompok-2 {
+  animation: floatFadeIn 2.0s ease-out forwards, swing 6.0s ease-in-out infinite;
+  font-family: 'Minecraft Font';
+  color: #e0e0e0;
+}
+
+#beranda .me-btn {
+  animation: fadeSlideUp 1.5s ease forwards;
+  font-family: 'Minecraft Font';
+  display: flex;
+  width: 110px;
+  max-width: 290px;
+  height: 38px;
+  max-height: 122px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #6aa2ff, #8bd6ff, #6aa2ff);
+  background-size: 200% 200%;
+  margin: 0 auto 420px auto;
+  color: #e0e0e0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1.55px solid #d4d4d4;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 28px;
+  transition: 0.8s, transform 0.8s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.me-btn:hover {
+  background: linear-gradient(135deg, #6882ff, #89a6ff, #6882ff);
+  background-size: 200% 200%;
+  transform: translateY(-8px) scale(1.1) rotate(-1deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.medsos-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 7.5px 0 25px 0;
+  
+  gap: 6px;
+}
+
+.medsos {
+  display: flex;
+  font-family: 'Minecraft Font';
+  width: 50px;
+  height: 50px;
+  perspective: 500px;
+}
+
+.konten {
+  width: 100%;
+  height: 100%;
+  transition: transform 1.15s;
+  transform-style: preserve-3d;
+}
+
+.medsos:hover .konten {
+  transform: rotateY(180deg);
+  transition: transform 1.15s;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 8px;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  font-weight: 250;
+  font-size: 15px;
+}
+
+.front, .back a {
+  color: #606060;
+  text-decoration: none;
+}
+
+.front {
+  background: linear-gradient(250deg, #05ccff, #73bdff);
+}
+
+.back {
+  color: #e0e0e0;
+  background: linear-gradient(250deg, #9eebff, #de99ff);
+  transform: rotateY(180deg);
+}
+
+#bg {
+  animation: bgFill 5s infinite alternate;
+}
+
+.foot {
+  margin: 25px 0 0 0;
+  background: rgba(0,0,0,0.18);
+  width: 100%;
+  height: 100%;
+  border-top: 1.25px solid grey;
+  backdrop-filter: blur(1.5px);
+}
+
+.copyright {text-align:center;line-height:50px;font-weight:550;font-size:15px;}
+
+@keyframes bgFill {
+  0% {
+    fill: rgba(56,82,79,0);
+  }
+  
+  70% {
+    fill: rgba(56,82,79,0);
+  }
+  
+  80% {
+    fill: rgba(56,82,79,0);
+  }
+  
+  100% {
+    fill: rgb(113,190,255);
+  }
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(56,82,79,0);
+    stroke: rgb(73,117,217);
+    stroke-width: 2;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+  }
+  
+  70% {
+    fill: rgba(56,82,79,0);
+    stroke: rgb(73,117,217);
+  }
+  
+  80% {
+    fill: rgba(56,82,79,0);
+    stroke: rgb(73,117,217);
+    stroke-width: 3;
+    text-shadow: 0 0 0 #ffffff00;
+  }
+  
+  100% {
+    fill: rgb(129,221,255);
+    stroke: rgb(73,117,217);
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(75px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes swing {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(20px); }
+  75% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes toRight {
+  from {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.84);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+  @keyframes floatFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @media (max-width: 1762px) {
+    .wadah {
+      padding: 0 60px;
+    }
+    
+    .title {
+      font-size: 60px;
+    }
+    
+    .bingkai {
+      width: 185px;
+      height: 185px;
+    }
+    
+    .artikel p {
+      font-size: 30px;
+    }
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .foot {
+      padding: 20px 0;
+    }
+    
+    .copyright {
+      font-size: 25px;
+    }
+    
+    .artikel h2 {
+      font-size: 40px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .wadah {
+      padding: 0 20px;
+    }
+    
+    .title {
+      font-size: 30px;
+    }
+    
+    .bingkai {
+      width: 125px;
+      height: 125px;
+    }
+      
+    .artikel p {
+      font-size: 15px;
+    }
+    
+    svg {
+      width: 90%;
+      height: 90%;
+    }
+      
+    .foot {
+      padding: 1px 0;
+    }
+      
+    .copyright {
+      font-size: 15px;
+    }
+    
+    .artikel h2 {
+      font-size: 20px;
+    }
+  }
