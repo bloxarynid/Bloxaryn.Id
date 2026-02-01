@@ -742,10 +742,6 @@ svg, text, .tumbal {
       height: 80px;
       width: 550px;
     }
-    
-    .menu {
-      transform: translateY(-100%);
-    }
   }
   
   @media (max-width: 768px) {
