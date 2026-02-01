@@ -11,6 +11,14 @@
 /* https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftSeven.ttf */
 
 @font-face {
+  font-family: 'Minecraft Title 2';
+  src: url('https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftFive-Bold.ttf');
+  font-style: bold;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
   font-family: 'Minecraft Font';
   src: url('https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/fonts/MinecraftSeven.ttf') format('truetype');
   font-style: normal;
@@ -34,6 +42,20 @@
   height: 100vh;
   object-fit: cover;
   z-index: -9999999999;
+}
+
+.abt-me-container {
+  flex-direction: column;
+  margin: 6px 0;
+  font-family: 'Minecraft Font';
+  color: #bababa;
+  width: 100%;
+}
+
+.abt-me {
+  font-family: 'Minecraft Title 2';
+  color: white;
+  font-size: 40px;
 }
 
 *, html {
@@ -117,7 +139,7 @@ nav ul li a:hover::after {
 
 svg {
   font-family: 'Minecraft Title';
-  padding: 280px 0 0 0;
+  padding: 10px 0 0 0;
 }
 
 svg, text, .tumbal {
@@ -141,13 +163,13 @@ svg, text, .tumbal {
 
 .wadah {
   background: rgba(0,0,0,0.18);
-  max-width: 1050px;
+  max-width: 1100px;
   height: auto;
   border: 1.25px solid rgba(204,204,204,0.532);
   backdrop-filter: blur(1.5px);
   border-radius: 14px;
   overflow: hidden;
-  margin: 10px auto;
+  margin: 6px auto;
   padding: 0 20px;
   min-height: 200px;
   display: flex;
@@ -189,7 +211,7 @@ svg, text, .tumbal {
   text-align: center;
   color: rgb(113,190,255);
   border-left: none;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
   font-weight: 400;
 }
 
@@ -202,7 +224,7 @@ svg, text, .tumbal {
   min-height: 120px;
 }
 
-#sosial .medsos { margin-top: 4px;}
+#sosial .card-flip { margin-top: 4px;}
 
 .artikel {
   width: 100%;
@@ -241,11 +263,17 @@ svg, text, .tumbal {
   animation: toRight 1.2s ease both;
   animation-timeline: view();
   animation-range: entry 0% exit 100%;
+  box-shadow: 0 0 25px rgb(0,0,0);
+}
+
+.bingkai img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wadah-kartu {
-  display: flex;
-  margin-top: 20px;
+  margin: 30px 0 18px 0;
   gap: 20px; /* Jarak antar kartu yang lebih lega */
   justify-content: flex-start;
   flex-wrap: nowrap;
@@ -355,13 +383,17 @@ svg, text, .tumbal {
   font-family: 'Minecraft Font';
   color: #e0e0e0;
   padding-bottom: 10px;
-  animation: fadeSlideUp 1.5s ease forwards;
+  animation: fadeSlideUp 1.8s ease forwards;
 }
 
 #beranda .kelompok-2 {
-  animation: floatFadeIn 2.0s ease-out forwards, swing 6.0s ease-in-out infinite;
+  animation: floatFadeIn 2.3s ease-out forwards;
   font-family: 'Minecraft Font';
+  font-size: 15px;
+  font-weight: 650;
   color: #e0e0e0;
+  flex-direction: column;
+  gap: 6px;
 }
 
 #beranda .me-btn {
@@ -369,22 +401,22 @@ svg, text, .tumbal {
   font-family: 'Minecraft Font';
   display: flex;
   width: 110px;
-  max-width: 290px;
   height: 38px;
-  max-height: 122px;
+  max-width: 768px
+  max-height: 696px;
   border-radius: 24px;
   background: linear-gradient(135deg, #6aa2ff, #8bd6ff, #6aa2ff);
   background-size: 200% 200%;
-  margin: 0 auto 420px auto;
+  margin: 10px auto 15px auto;
   color: #e0e0e0;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   font-size: 16px;
   border: 1.55px solid #d4d4d4;
-  justify-content: center;
-  align-items: center;
   padding: 12px 28px;
-  transition: 0.8s, transform 0.8s;
+  transition: transform 1s ease, background 1s ease;
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
@@ -395,46 +427,40 @@ svg, text, .tumbal {
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-.medsos-container {
-  display: flex;
+.card-flip-container {
+  display: grid;
   justify-content: center;
-  flex-wrap: wrap;
-  margin: 7.5px 0 25px 0;
-  
-  gap: 6px;
+  margin: 7.5px auto 18px auto;
 }
 
-.medsos {
+.card-flip:nth-child(5):last-child {
+  grid-column: 3 / span 1;
+}
+
+.card-flip {
   display: flex;
   font-family: 'Minecraft Font';
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   perspective: 500px;
 }
 
 .konten {
   width: 100%;
   height: 100%;
-  transition: transform 1.15s;
+  transition: transform 0.75s;
   transform-style: preserve-3d;
 }
 
-.medsos:hover .konten {
+.card-flip:hover .konten {
   transform: rotateY(180deg);
-  transition: transform 1.15s;
+  transition: transform 0.75s;
 }
 
 .front, .back {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 50px;
   text-align: center;
-  font-size: 8px;
-  border-radius: 12px;
   backface-visibility: hidden;
-  font-weight: 250;
-  font-size: 15px;
 }
 
 .front, .back a {
@@ -443,12 +469,12 @@ svg, text, .tumbal {
 }
 
 .front {
-  background: linear-gradient(250deg, #05ccff, #73bdff);
+  background: white;
 }
 
 .back {
-  color: #e0e0e0;
-  background: linear-gradient(250deg, #9eebff, #de99ff);
+  color: grey;
+  background: white;
   transform: rotateY(180deg);
 }
 
@@ -466,6 +492,43 @@ svg, text, .tumbal {
 }
 
 .copyright {text-align:center;line-height:50px;font-weight:550;font-size:15px;}
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  margin-left: auto;
+  margin: auto 0;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.hamburger-lines {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-lines span {
+  width: 100%;
+  height: 2.5px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.sizing {
+  width: 150px; 
+  height: 150px;
+  display: flex; 
+  animation: fadeSlideUp 1.5s ease forwards;
+  margin: 280px auto 0 auto; 
+  justify-content: center; 
+  align-items: center;
+}
 
 @keyframes bgFill {
   0% {
@@ -526,13 +589,6 @@ svg, text, .tumbal {
   }
 }
 
-@keyframes swing {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(20px); }
-  75% { transform: translateX(-20px); }
-  100% { transform: translateX(0); }
-}
-
 @keyframes toRight {
   from {
     opacity: 0;
@@ -572,8 +628,18 @@ svg, text, .tumbal {
   }
   
   @media (max-width: 1762px) {
+    .abt-me-container {
+      display: flex;
+    }
+    
+    .kelompok-2 {
+      display: none;
+    }
+    
     .wadah {
       padding: 0 60px;
+      background: rgba(0,0,0,0.290);
+      border: 1.25px solid white;
     }
     
     .title {
@@ -590,6 +656,7 @@ svg, text, .tumbal {
     }
     
     svg {
+      display: none;
       width: 100%;
       height: 100%;
     }
@@ -605,11 +672,95 @@ svg, text, .tumbal {
     .artikel h2 {
       font-size: 40px;
     }
+    
+    #beranda .kelompok-2 p {
+      font-size: 24px;
+      padding-bottom: 10px;
+    }
+    
+    #beranda .me-btn {
+      border-radius: 50px;
+      width: 180px;
+      height: 65px;
+      font-size: 22px;
+    }
+    
+    .sizing {
+      border-radius: 50px;
+      width: 250px;
+      height: 250px;
+      border: 4.5px solid #86ceff;
+    }
+    
+    .sizing img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+    
+    .sizing:hover img {
+      transform: scale(1.2);
+    }
+    
+    .card-flip-container {
+      grid-template-columns: repeat(4, 1.5fr);
+      gap: 14px;
+      padding: 20px;
+    }
+    
+    .card-flip {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .konten {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .front, .back {
+      width: 100%;
+      height: 100%;
+      line-height: 120px;
+      text-align: center;
+      border-radius: 24px;
+      font-weight: 900;
+      font-size: 35px;
+    }
+    
+    .wadah-kartu {
+      display: flex;
+      margin: 16px 0 9px 0;
+    }
+    
+    .close {
+      display: none;
+    }
+    
+    .audio {
+      padding-bottom: 35px;
+      height: 80px;
+      width: 550px;
+    }
+    
+    .menu {
+      transform: translateY(-100%);
+    }
   }
   
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
+    .abt-me-container {
+      display: none;
+    }
+    
+    .kelompok-2 {
+      display: flex;
+    }
+    
     .wadah {
       padding: 0 20px;
+      background: rgba(0,0,0,0.18);
+      border: 1.25px solid rgba(204,204,204,0.532);
     }
     
     .title {
@@ -626,6 +777,7 @@ svg, text, .tumbal {
     }
     
     svg {
+      display: flex;
       width: 90%;
       height: 90%;
     }
@@ -640,5 +792,133 @@ svg, text, .tumbal {
     
     .artikel h2 {
       font-size: 20px;
+    }
+    
+    /*.menu {
+      position: absolute;
+      top: 70px;
+      right: 6px;
+      width: 55%;
+      background: #2121218f;
+      flex-direction: column;
+      display: none;
+      line-height: 40px;
+      border-radius: 10px;
+      border: 1px solid grey;
+    }*/
+    
+    .menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 10000000000000;
+      background: #000000e1;
+      flex-direction: column;
+      line-height: 40px;
+      justify-content: flex-start;
+      padding: 5px 0;
+      
+      transform: translateY(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .menu li a {
+      padding: 5px 0;
+    }
+    
+    #menu-toggle:checked ~ .menu-icon ~ .menu {
+      transform: translateY(0);
+    }
+    
+    #menu-toggle:not(:checked) ~ .menu-icon ~ .menu {
+      transform: translateY(-100%);
+    }
+    
+    .close {
+      position: absolute;
+      top: 7.5px;
+      right: 17px;
+      z-index: 10000000000001;
+      cursor: pointer;
+      color: white;
+      font-size: 38px;
+    }
+    
+    .menu-icon {
+      display: block;
+    }
+    
+    #beranda .kelompok-2 p {
+      font-size: 100%;
+    }
+    
+    #beranda .me-btn {
+      width: 110px;
+      height: 38px;
+      font-size: 15px;
+      border-radius: 50px;
+    }
+    
+    .sizing img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.35s ease;
+    }
+    
+    .sizing:hover img {
+      transform: scale(1.13);
+    }
+    
+    .sizing {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      border: 2px solid #81bcff;
+    }
+    
+    .card-flip-container {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      padding: 15px;
+    }
+    
+    .card-flip {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .konten {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .front, .back {
+      width: 100%;
+      height: 100%;
+      line-height: 60px;
+      text-align: center;
+      border-radius: 12px;
+      font-weight: 450;
+      font-size: 17.5px;
+    }
+    
+    .wadah-kartu {
+      display: grid;
+      grid-template-columns: repeat(3, 0.5fr);
+      padding: 0;
+      gap: 8px;
+      margin: 30px 0 18px 0;
+    }
+    
+    .close {
+      display: flex;
+    }
+    
+    .audio {
+      padding-bottom: 10px;
+      height: 75px;
+      width: 300px;
     }
   }
