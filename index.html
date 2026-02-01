@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bloxaryn Portofolio</title>
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="httpsr.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/sat.css">
 </head>
 <body>
   
@@ -20,28 +21,53 @@
   <header>
     <nav>
       <a href="https://bloxarynid.github.io/Bloxaryn.Id"><img style="background: linear-gradient(180deg, #4e65ff, #92effd);" class="icon" src="image/icon/absen11.jpg"></a>
-      <ul>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <div class="hamburger-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </label>
+      <ul class="menu">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="close">
+          <i class="fas fa-times close"></i>
+        </label>
         <li><a href="#beranda">Home</a></li>
         <li><a href="#me">Tentang</a></li>
         <li><a href="#projek">Projek</a></li>
-        <li><a href="#sosial">Sosial</a></li>
+        <li><a href="#sosial">Sosial & Contact</a></li>
+        <li><a href="#audio">Audio</a></li>
       </ul>
     </nav>
   </header>
-  <section class="section-anim" id="beranda" style="animation: scrollAnimation linear both;animation-timeline: view();animation-range: entry 0% cover 40%;">
+  <section id="beranda">
+    <div class="bingkai sizing" style="margin-bottom:25px;">
+      <img src="image/icon/absen11.jpg" alt="My My My">
+    </div>
     <svg viewBox="0 0 1320 300">
       <text x="50%" y="50%" text-anchor="middle">
         <a class="tumbal">BLOXARYN.ID</a>
       </text>
     </svg>
+    <div class="abt-me-container" style="animation: floatFadeIn 2.0s ease-out forwards;">
+      <h3 class="abt-me">Hello I'm <span style="color:#7cd8ff;">Bloxaryn.Id</span></h3>
+      <p style="font-size:30px; padding: 30px 160px;">Aku seorang <span style="color:#71ceff;">Front End Developer!</span>, saya memiliki cita ini sebelum tanggal 1 Januari 2026 ini. Saya bermain <span style="color:#71ceff;">Minecraft</span> dan saya terobsesi oleh game tersebut, jadi saya membuat website ini menggunakan tema <span style="color:#71ceff;">Minecraft!</span></p>
+      <a href="#me" style="text-decoration: none;">
+      <button class="me-btn">Kenali Saya</button>
+    </a>
+    </div>
     <div class="kelompok-2">
-      <p>Front End Developer</p>
+      <div class="hp">
+        <p>Front End Developer</p>
+      </div>
       <a href="#me" style="text-decoration: none;">
       <button class="me-btn">Kenali Saya</button>
     </a>
     </div>
   </section>
-  <section id="me" style="animation: scrollAnimation linear both;animation-timeline: view();animation-range: entry 0% cover 40%;">
+  <section id="me" style="margin-top:245px;" class="sat-fade-up sat-duration-900 sat-delay-100">
     <div class="wadah">
       <h2 class="title">Tentang Saya</h2>
       <div class="bingkai">
@@ -53,17 +79,17 @@
         <p style="font-weight: 550;">&emsp;Proses belajar saya dilakukan secara bertahap. DeepSeek menjadi teman diskusi yang membantu memperjelas pemahaman dan manfaat setiap kode, sementara TikTok serta media sosial memberi saya inspirasi template dan animasi kreatif untuk pengembangan visual.</p>
         <p style="font-weight: 550;">&emsp;Saya sedang membangun fondasi yang kuat. Di HTML, saya mempelajari peran setiap tag, penggunaan atribut, dan seni menyusun serta mengelompokkan elemen dengan struktur yang rapi dan bermakna. Sementara di CSS, saya mendalami cara mengatur tata letak, menjembatani jarak antar elemen, memberikan gaya, menciptakan animasi sederhana, dan—yang krusial—memastikan setiap halaman web tetap responsif di berbagai perangkat.</p>
         <p style="font-weight: 550;">&emsp;Rencana ke depan, setelah saya merasa cukup percaya diri dengan dasar-dasar ini, saya akan melangkah untuk mempelajari JavaScript untuk menghidupkan website dengan interaktivitas, lalu beralih ke Tailwind CSS untuk mempercepat dan memperdalam proses pengembangan antarmuka yang modern.</p>
-        <p style="font-weight: 550;">&emsp;Walaupun masih duduk di bangku SMP, saya tidak pernah goyah hanya karena melihat kemajuan orang lain, atau berbeda dengan impian mereka. Saya tetap fokus pada jalan saya sendiri. Di bawah ini, kalian bisa melihat semua proyek yang telah saya buat...</p>
+        <p style="font-weight: 550;padding-bottom:18px;">&emsp;Walaupun masih duduk di bangku SMP, saya tidak pernah goyah hanya karena melihat kemajuan orang lain, atau berbeda dengan impian mereka. Saya tetap fokus pada jalan saya sendiri. Di bawah ini, kalian bisa melihat semua proyek yang telah saya buat...</p>
       </article>
     </div>
   </section>
   
-  <section id="projek" style="animation: scrollAnimation linear both;animation-timeline: view();animation-range: entry 0% cover 40%;">
+  <section id="projek" class="sat-fade-up sat-duration-900 sat-delay-100">
     <h2 class="title">My Project</h2>
     <div class="wadah scroll">
       <div class="wadah-kartu">
         <div class="kartu">
-          <img src="image/icon/absen11.jpg">
+          <img src="image/1.jpg">
           <div class="info-kartu">
             <a href="https://bloxarynid.github.io/MinePack" target="_blank">
               <h2>MinePack</h2>
@@ -72,7 +98,7 @@
           </div>
         </div>
         <div class="kartu">
-          <img src="image/icon/absen11.jpg">
+          <img src="image/2.jpg">
           <div class="info-kartu">
             <a href="https://bloxarynid.github.io/3dWebsite" target="_blank">
               <h2>3d Website</h2>
@@ -81,16 +107,16 @@
           </div>
         </div>
         <div class="kartu">
-          <img src="image/icon/absen11.jpg">
+          <img src="image/3.jpg">
           <div class="info-kartu">
-            <a href="https://bloxarynid.github.io/MinePatch" target="_blank">
-              <h2>MinePatch</h2>
+            <a href="https://github.com/bloxarynid/sat" target="_blank">
+              <h2>SAT</h2>
             </a>
-            <p>Website ini merupakan web unyuk mengunduh Minecraft patch versi terbaru! (Website ini sudah tidak aktif)</p>
+            <p>kumpulan animasi scroll</p>
           </div>
         </div>
         <div class="kartu">
-          <img src="image/icon/absen11.jpg">
+          <img src="image/4.jpg">
           <div class="info-kartu">
             <a href="https://bloxarynid.github.io/Bloxaryn-Project/BloxDecoder/" target="_blank">
               <h2>Encryption</h2>
@@ -99,7 +125,7 @@
           </div>
         </div>
         <div class="kartu">
-          <img src="image/icon/absen11.jpg">
+          <img src="image/5.jpg">
           <div class="info-kartu">
             <a href="https://bloxarynid.github.io/7dClass" target="_blank">
               <h2>7dClass</h2>
@@ -108,7 +134,7 @@
           </div>
         </div>
         <div class="kartu">
-          <img src="image/icon/absen11.jpg">
+          <img src="image/6.jpg">
           <div class="info-kartu">
             <a href="https://bloxarynid.github.io/Bloxaryn.Id" target="_blank">
               <h2>Portofolio</h2>
@@ -119,11 +145,11 @@
       </div>
     </div>
   </section>
-  <section id="sosial" style="animation: scrollAnimation linear both;animation-timeline: view();animation-range: entry 0% cover 20%;">
-    <div class="wadah">
+  <section id="sosial" class="sat-fade-up sat-duration-3000 sat-delay-100">
+  <div class="wadah sat-fade-up sat-delay-300">
       <h2 class="title">Social</h2>
-      <div class="medsos-container">
-        <div class="medsos">
+      <div class="card-flip-container">
+        <div class="card-flip">
           <div class="konten">
             <div class="front">
               <i class="fa-brands fa-tiktok fa-fade fa-2xl" style="color: #777777;"></i>
@@ -133,7 +159,7 @@
             </div>
           </div>
         </div>
-        <div class="medsos">
+        <div class="card-flip">
           <div class="konten">
             <div class="front">
               <i class="fa-brands fa-whatsapp fa-fade fa-2xl" style="color: #777777;"></i>
@@ -143,7 +169,7 @@
             </div>
           </div>
         </div>
-        <div class="medsos">
+        <div class="card-flip">
           <div class="konten">
             <div class="front">
               <i class="fa-brands fa-github fa-fade fa-2xl" style="color: #777777;"></i>
@@ -153,7 +179,7 @@
             </div>
           </div>
         </div>
-        <div class="medsos">
+        <div class="card-flip">
           <div class="konten">
             <div class="front">
               <i class="fa-regular fa-envelope fa-fade fa-2xl" style="color: #777777;"></i>
@@ -166,10 +192,17 @@
       </div>
     </div>
   </section>
+  <section id="audio" class="sat-fade-up sat-duration-900 sat-delay-100">
+  <div class="wadah sat-fade-up sat-delay-500">
+      <h2 class="title">Audio</h2>
+      <audio class="audio" src="audio/backsound.mp3" loop controls></audio>
+    </div>
+  </section>
   <footer class="foot" style="font-family: 'Minecraft Font';color: #e0e0e0;">
       <p class="copyright">
         Hak cipta © 2026 - <a href="https://bloxarynid.github.io/Bloxaryn.Id" target="_blank" style="text-decoration:none;color:#e0e0e0;">@Bloxaryn.id</a>
       </p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/script/script.js"></script>
 </body>
 </html>
