@@ -91,7 +91,7 @@ nav {
   padding: 0.55rem 2rem 0.55rem 0.55rem;
   display: flex; /* agar nav bisa berdampingan */
   height: 65px;
-  backdrop-filter: blur(1.5px);
+  backdrop-filter: pr(1.5px);
 }
 
 nav ul {
@@ -207,11 +207,11 @@ svg, text, .tumbal {
 
 .title {
   font-family: 'Minecraft Title';
-  padding: 5px 0 15px 0;
+  padding: 10px 0 15px 0;
   text-align: center;
   color: rgb(113,190,255);
   border-left: none;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-weight: 400;
 }
 
@@ -260,9 +260,6 @@ svg, text, .tumbal {
   background: transparent;
   overflow: hidden;
   margin-top: 5px;
-  animation: toRight 1.2s ease both;
-  animation-timeline: view();
-  animation-range: entry 0% exit 100%;
   box-shadow: 0 0 25px rgb(0,0,0);
 }
 
@@ -334,8 +331,8 @@ svg, text, .tumbal {
   width: 100%;
   height: 100%;
   padding: 10px 0 0 0;
-  background: linear-gradient(to top, #51f2ffc0, #ffffff00);
-  color: #e0e0e0;
+  background: linear-gradient(to top, #51f8ff, #ffffff00);
+  color: #aaaaaa;
   transform: translateY(100%);
   transition: transform 0.4s ease;
   text-align: center;
@@ -343,7 +340,7 @@ svg, text, .tumbal {
 
 .info-kartu a {
   font-family: 'Jersey 10';
-  color: #e0e0e0;
+  color: #aaaaaa;
   text-decoration: none;
   font-size: 1.6rem;
 }
@@ -488,8 +485,7 @@ svg, text, .tumbal {
   width: 100%;
   height: 100%;
   border-top: 1.25px solid grey;
-  backdrop-filter: blur(
-    1.5px);
+  backdrop-filter: blur(1.5px);
 }
 
 .copyright {text-align:center;line-height:50px;font-weight:550;font-size:15px;}
@@ -590,18 +586,6 @@ svg, text, .tumbal {
   }
 }
 
-@keyframes toRight {
-  from {
-    opacity: 0;
-    transform: translateX(-70px);
-  }
-  
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes scrollAnimation {
   from {
     opacity: 0;
@@ -639,12 +623,12 @@ svg, text, .tumbal {
     
     .wadah {
       padding: 0 60px;
-      background: rgba(0,0,0,0.290);
+      background: rgba(0,0,0,0.15);
       border: 1.25px solid white;
     }
     
     .title {
-      font-size: 60px;
+      font-size: 65px;
     }
     
     .bingkai {
@@ -761,7 +745,7 @@ svg, text, .tumbal {
     }
     
     .title {
-      font-size: 30px;
+      font-size: 32.5px;
     }
     
     .bingkai {
