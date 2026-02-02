@@ -454,6 +454,10 @@ svg, text, .tumbal {
   transition: transform 0.75s;
 }
 
+.card-flip:hover .back a {
+  animation: opacityCard 1s;
+}
+
 .front, .back {
   position: absolute;
   text-align: center;
@@ -461,7 +465,7 @@ svg, text, .tumbal {
 }
 
 .front, .back a {
-  color: #606060;
+  color: white;
   text-decoration: none;
 }
 
@@ -473,6 +477,13 @@ svg, text, .tumbal {
   color: grey;
   background: white;
   transform: rotateY(180deg);
+}
+
+.back a {
+  background: rgba(0,0,0,0.4);
+  padding: 1.5px 4px 5px 4px;
+  border-radius: 18px;
+  margin: auto;
 }
 
 #bg {
@@ -572,6 +583,20 @@ svg, text, .tumbal {
     stroke-width: 0;
     stroke-dashoffset: -25%;
     stroke-dasharray: 50% 0;
+  }
+}
+
+@keyframes opacityCard {
+  0% {
+    opacity: 0;
+  }
+  
+  51% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
   }
 }
 
