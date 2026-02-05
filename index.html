@@ -11,7 +11,6 @@
   <link rel="preconnect" href="httpsr.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bloxarynid/sat@main/sat/sat.css">
-  <script src="https://cdn.jsdelivr.net"></script>
 </head>
 <body>
   
@@ -267,32 +266,12 @@
       <audio class="audio" src="audio/backsound.mp3" loop controls></audio>
     </div>
   </section>
-  
-<div class="container">
-    <canvas id="skin_container"></canvas>
-</div>
-
   <footer class="foot" style="font-family: 'Minecraft Font';color: #e0e0e0;">
       <p class="copyright">
         Hak cipta © 2026 - <a href="https://bloxarynid.github.io/Bloxaryn.Id" target="_blank" style="text-decoration:none;color:#e0e0e0;">@Bloxaryn.id</a>
       </p>
   </footer>
-  <script>const skinViewer = new skinview3d.SkinViewer({
-    canvas: document.getElementById("skin_container"),
-    width: 300,
-    height: 300,
-    skin: "https://bloxarynid.github.io/skin/custom4.png" // Ganti dengan URL skin kamu
-});
-
-// Tambahkan animasi berjalan (Opsional)
-skinViewer.animation = new skinview3d.WalkingAnimation();
-
-// Aktifkan kontrol mouse (Putar/Zoom)
-skinViewer.controls.enableRotate = true;
-skinViewer.controls.enableZoom = true;
-  </script>
-  <script>
-  // SAT (Scroll Animation Tool) - Complete Version
+  <script>// SAT (Scroll Animation Tool) - Complete Version
 // Bloxaryn.Id Tools v1.1.0
 // Inspired by AOS (Animate On Scroll)
 (function(window, document) {
@@ -601,5 +580,59 @@ skinViewer.controls.enableZoom = true;
   initializeSAT();
   
 })(window, document);</script>
+
+<script>
+  class DeviceDetector {
+  constructor() {
+    this.cacheDeviceType();
+    window.addEventListener('resize', () => this.cacheDeviceType());
+  }
+  
+  cacheDeviceType() {
+    this._deviceType = this.detectDevice();
+  }
+  
+  detectDevice() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const screenWidth = window.screen.width;
+    const hasTouch = this.hasTouch();
+    
+    const isTablet = /ipad|android(?!.*mobile)/i.test(userAgent) || 
+                    (screenWidth > 767 && screenWidth < 1024 && hasTouch);
+    
+    const isMobile = /mobi|android.*mobile|iphone|ipod|blackberry|opera mini/i.test(userAgent) ||
+                    (screenWidth <= 767 && hasTouch);
+    
+    if (isMobile) return 'mobile';
+    if (isTablet) return 'tablet';
+    return 'desktop';
+  }
+  
+  hasTouch() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  }
+  
+  get deviceType() {
+    return this._deviceType;
+  }
+  
+  isMobile() {
+    return this._deviceType === 'mobile';
+  }
+  
+  isDesktop() {
+    return this._deviceType === 'desktop';
+  }
+  
+  isTablet() {
+    return this._deviceType === 'tablet';
+  }
+}
+
+const detector = new DeviceDetector();
+console.log(`Device: ${detector.deviceType}`);
+console.log(`Is Mobile: ${detector.isMobile()}`);
+console.log(`Is Desktop: ${detector.isDesktop()}`);
+</script>
 </body>
 </html>
