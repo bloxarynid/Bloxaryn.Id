@@ -56,6 +56,9 @@
   font-family: 'Minecraft Title 2';
   color: white;
   font-size: 40px;
+  text-align: left;
+  padding: 0 50px;
+  text-align: left;
 }
 
 *, html {
@@ -139,14 +142,14 @@ nav ul li a:hover::after {
 
 svg {
   font-family: 'Minecraft Title';
-  padding: 10px 0 0 0;
+  padding: 10px auto 0 auto;
 }
 
-svg, text, .tumbal {
+svg, text {
   text-transform: uppercase;
   font-size: 125px;
   font-weight: 450;
-  animation: stroke 6.2s infinite alternate, fadeSlideUp 1.5s ease forwards;
+  animation: stroke 3.2s infinite alternate;
   fill: rgb(113,190,255);
 }
 
@@ -170,7 +173,7 @@ svg, text, .tumbal {
   border-radius: 14px;
   overflow: hidden;
   margin: 6px auto;
-  padding: 0 20px;
+  padding: 5px;
   min-height: 200px;
   display: flex;
   flex-direction: column;
@@ -207,7 +210,7 @@ svg, text, .tumbal {
 
 .title {
   font-family: 'Minecraft Title';
-  padding: 10px 0 15px 0;
+  padding: 15px 0 30px 0;
   text-align: center;
   color: rgb(113,190,255);
   border-left: none;
@@ -233,13 +236,14 @@ svg, text, .tumbal {
 .artikel p {
   font-family: 'Minecraft Font';
   color: #e0e0e0;
-  margin: 0 11px 5.5px 11px;
-  line-height: 1.6;
+  margin: 0 11px 20px 11px;
+  line-height: 1.8;
   overflow-wrap: break-word;
   word-wrap: break-word;
   max-width: 100%;
   box-sizing: border-box;
   text-align: justify;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.8);
 }
 
 .artikel h2 {
@@ -252,8 +256,6 @@ svg, text, .tumbal {
 
 .bingkai {
   margin: 0 auto 6px auto;
-  width: 125px;
-  height: 125px;
   border-radius: 20px;
   border: 2px solid rgb(124,233,255);
   position: relative;
@@ -366,25 +368,14 @@ svg, text, .tumbal {
   padding: 0 20px;
 }
 
-#beranda .section-anim {
-  color: #e0e0e0;
-  z-index: 5;
-  position: relative;
-  max-width: 600px;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.6;
-}
 
-#beranda p {
+.kelompok-2 p {
   font-family: 'Minecraft Font';
   color: #e0e0e0;
   padding-bottom: 10px;
-  animation: fadeSlideUp 1.8s ease forwards;
 }
 
 #beranda .kelompok-2 {
-  animation: floatFadeIn 2.3s ease-out forwards;
   font-family: 'Minecraft Font';
   font-size: 15px;
   font-weight: 650;
@@ -393,18 +384,14 @@ svg, text, .tumbal {
   gap: 6px;
 }
 
-#beranda .me-btn {
-  animation: fadeSlideUp 1.5s ease forwards;
+.me-btn {
   font-family: 'Minecraft Font';
   display: flex;
-  width: 110px;
-  height: 38px;
   max-width: 768px
   max-height: 696px;
   border-radius: 24px;
   background: linear-gradient(135deg, #6aa2ff, #8bd6ff, #6aa2ff);
   background-size: 200% 200%;
-  margin: 10px auto 15px auto;
   color: #e0e0e0;
   text-align: center;
   justify-content: center;
@@ -412,16 +399,41 @@ svg, text, .tumbal {
   font-weight: 600;
   font-size: 16px;
   border: 1.55px solid #d4d4d4;
-  padding: 12px 28px;
-  transition: transform 1s ease, background 1s ease;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  padding: 12px 6px;
+  transition: all 2s ease;
 }
 
 .me-btn:hover {
-  background: linear-gradient(135deg, #6882ff, #89a6ff, #6882ff);
+  background: transparent;
   background-size: 200% 200%;
   transform: translateY(-8px) scale(1.1) rotate(-1deg);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(132,214,255,0.659);
+}
+
+.contact-btn {
+  font-family: 'Minecraft Font';
+  display: flex;
+  max-width: 768px
+  max-height: 696px;
+  border-radius: 24px;
+  background: transparent;
+  background-size: 200% 200%;
+  color: #6aa2ff;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1.55px solid #75b9ff;
+  padding: 12px 6px;
+  transition: all 2s ease;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(135deg, #6aa2ff, #8bd6ff, #6aa2ff);
+  background-size: 200% 200%;
+  transform: translateY(-8px) scale(1.1) rotate(-1deg);
+  box-shadow: 0 0 15px rgba(132,214,255,0.659);
 }
 
 .card-flip-container {
@@ -437,8 +449,6 @@ svg, text, .tumbal {
 .card-flip {
   display: flex;
   font-family: 'Minecraft Font';
-  width: 60px;
-  height: 60px;
   perspective: 500px;
 }
 
@@ -528,14 +538,39 @@ svg, text, .tumbal {
   border-radius: 2px;
 }
 
-.sizing {
-  width: 150px; 
-  height: 150px;
-  display: flex; 
-  animation: fadeSlideUp 1.5s ease forwards;
-  margin: 280px auto 0 auto; 
-  justify-content: center; 
+.large {
+  margin: 260px 0 340px 0;
+  flex-direction: row;
+  padding: 0 35px;
   align-items: center;
+  max-width: 1762px;
+  justify-content: space-between;
+}
+
+.kelompok-3, .kelompok-1 {
+  flex-direction: column;
+}
+
+.small {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  animation: fadeSlideUp 1.5s ease forwards;
+}
+
+.small .sizing {
+  margin: 280px auto 0 auto; 
+}
+
+.tombol {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  gap: 50px;
+  justify-content: center;
 }
 
 @keyframes bgFill {
@@ -638,6 +673,16 @@ svg, text, .tumbal {
   }
   
   @media (max-width: 1762px) {
+    #me .wadah {
+      background: transparent;
+      border: 0.1px solid transparent;
+    }
+    
+    #projek .wadah{
+      background: transparent;
+      border: 0.1px solid transparent;
+    }
+    
     .abt-me-container {
       display: flex;
     }
@@ -653,12 +698,17 @@ svg, text, .tumbal {
     }
     
     .title {
+      font-family: 'Minecraft Title 2';
       font-size: 65px;
+      text-decoration: underline;
+      text-decoration-color: #75d6ff;
+      text-decoration-thickness: 2.5px;
+      text-underline-offset: 10px;
     }
     
     .bingkai {
-      width: 185px;
-      height: 185px;
+      width: 300px;
+      height: 300px;
     }
     
     .artikel p {
@@ -666,7 +716,6 @@ svg, text, .tumbal {
     }
     
     svg {
-      display: none;
       width: 100%;
       height: 100%;
     }
@@ -688,17 +737,17 @@ svg, text, .tumbal {
       padding-bottom: 10px;
     }
     
-    #beranda .me-btn {
+    .me-btn, .contact-btn {
       border-radius: 50px;
-      width: 180px;
-      height: 65px;
-      font-size: 22px;
+      width: 190px;
+      height: 70px;
+      font-size: 26px;
     }
     
     .sizing {
       border-radius: 50px;
-      width: 250px;
-      height: 250px;
+      width: 360px;
+      height: 360px;
       border: 4.5px solid #86ceff;
     }
     
@@ -721,6 +770,7 @@ svg, text, .tumbal {
     .card-flip {
       width: 120px;
       height: 120px;
+      border-radius: 16px;
     }
     
     .konten {
@@ -739,8 +789,14 @@ svg, text, .tumbal {
     }
     
     .wadah-kartu {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       margin: 16px 0 9px 0;
+    }
+    
+    .kartu {
+      width: 350px;
+      height: 440px;
     }
     
     .close {
@@ -752,9 +808,26 @@ svg, text, .tumbal {
       height: 80px;
       width: 550px;
     }
+    
+    .large {
+      display: flex;
+    }
+    
+    .small {
+      display: none;
+    }
+    
+    .ai-font {
+      font-weight: 350;
+      font-size: 24px;
+    }
+    
+    .back a {
+      font-weight: 500;
+      font-size: 25px;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     .abt-me-container {
       display: none;
     }
@@ -770,12 +843,18 @@ svg, text, .tumbal {
     }
     
     .title {
-      font-size: 32.5px;
+      font-family: 'Minecraft Title';
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+      font-size: 35px;
+      text-decoration: underline;
+      text-decoration-color: #75d6ff;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 10px;
     }
     
     .bingkai {
-      width: 125px;
-      height: 125px;
+      width: 130px;
+      height: 130px;
     }
       
     .artikel p {
@@ -824,7 +903,7 @@ svg, text, .tumbal {
       flex-direction: column;
       line-height: 40px;
       justify-content: flex-start;
-      padding: 5px 0;
+      padding: 65px 0;
       
       transform: translateY(-100%);
       transition: transform 0.6s ease;
@@ -860,9 +939,9 @@ svg, text, .tumbal {
       font-size: 100%;
     }
     
-    #beranda .me-btn {
-      width: 110px;
-      height: 38px;
+    .me-btn, .contact-btn {
+      width: 115px;
+      height: 45px;
       font-size: 15px;
       border-radius: 50px;
     }
@@ -879,9 +958,10 @@ svg, text, .tumbal {
     
     .sizing {
       border-radius: 50%;
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       border: 2px solid #81bcff;
+      animation: fadeSlideUp 1.5s ease forwards;
     }
     
     .card-flip-container {
@@ -893,11 +973,13 @@ svg, text, .tumbal {
     .card-flip {
       width: 60px;
       height: 60px;
+      border-radius: 16px;
     }
     
     .konten {
       width: 100%;
       height: 100%;
+      border-radius: 22px;
     }
     
     .front, .back {
@@ -908,13 +990,14 @@ svg, text, .tumbal {
       border-radius: 12px;
       font-weight: 450;
       font-size: 17.5px;
+      border-radius: 22px;
     }
     
     .wadah-kartu {
       display: grid;
-      grid-template-columns: repeat(3, 0.5fr);
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
       padding: 0;
-      gap: 8px;
+      gap: 10px;
       margin: 30px 0 18px 0;
     }
     
@@ -927,4 +1010,41 @@ svg, text, .tumbal {
       height: 75px;
       width: 300px;
     }
+    
+    .large {
+      display: none;
+    }
+    
+    .small {
+      display: flex;
+    }
+    
+    #projek .wadah {
+      border: 0.1px solid transparent;
+      width: 100%;
+      background: transparent;
+      padding: 0;
+    }
+    
+    .kartu {
+      width: 175px;
+      height: 220px;
+    }
+    
+    .ai-font {
+      font-size: 12px;
+    }
+    
+    .back a {
+      font-weight: 250;
+      font-size: 12px;
+    }
   }
+
+#skin_container {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #555;
+    background-color: #f0f0f0;
+    cursor: grab; /* Menandakan model bisa diputar */
+}
